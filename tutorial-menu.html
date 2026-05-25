@@ -1,0 +1,564 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tutorial Menu — Kura</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .item-grid { display: grid; grid-template-columns: 1fr; gap: 22px; margin-top: 36px; }
+
+    .item-card {
+      background: var(--mm-surface);
+      border: 1px solid var(--mm-border);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow 220ms ease;
+    }
+    .item-card:hover { box-shadow: var(--shadow-md); }
+
+    .item-header {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 6px;
+    }
+    .item-num {
+      font-family: var(--mm-font-serif);
+      font-style: italic;
+      font-size: 24px;
+      color: var(--mm-purple);
+      min-width: 32px;
+    }
+    .item-title { font-size: 21px; font-weight: 700; margin: 0; color: var(--mm-ink); }
+    .item-level {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 4px 11px;
+      border-radius: var(--radius-pill);
+    }
+    .level-beginner { background: #e0f9fa; color: #032b2e; }
+    .level-intermediate { background: var(--mm-purple-50); color: var(--mm-purple-ink); }
+    .level-advanced { background: var(--mm-yellow-soft); color: #5a4400; }
+    .level-practical { background: var(--mm-bg-2); color: var(--mm-slate-600); }
+
+    .item-what {
+      font-size: 16px;
+      line-height: 1.55;
+      color: var(--mm-slate-600);
+      margin: 12px 0 18px;
+      max-width: 720px;
+    }
+
+    .item-detail-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    @media (max-width: 640px) { .item-detail-grid { grid-template-columns: 1fr; } }
+
+    .detail-box {
+      background: var(--mm-bg);
+      border-radius: var(--radius-md);
+      padding: 16px 18px;
+    }
+    .detail-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 600;
+      color: var(--mm-muted);
+      margin-bottom: 8px;
+    }
+    .detail-box ul {
+      margin: 0;
+      padding-left: 18px;
+      font-size: 14px;
+      color: var(--mm-slate-600);
+      line-height: 1.6;
+    }
+    .detail-box ul li { margin-bottom: 3px; }
+    .detail-box p { margin: 0; font-size: 14px; color: var(--mm-slate-600); line-height: 1.55; }
+    .detail-box .cost { color: var(--mm-purple); font-weight: 600; }
+
+    .deliverable-box {
+      background: var(--mm-bg);
+      border-radius: var(--radius-md);
+      padding: 16px 18px;
+      border-left: 3px solid var(--mm-teal);
+      margin-top: 16px;
+    }
+    .deliverable-box .detail-label { color: var(--mm-teal-deep); }
+    .deliverable-box p { margin: 0; font-size: 14.5px; color: var(--mm-ink); font-weight: 500; }
+
+    .note-box {
+      background: var(--mm-yellow-soft);
+      border-radius: var(--radius-md);
+      padding: 14px 18px;
+      margin-top: 14px;
+      font-size: 13.5px;
+      color: #5a4400;
+    }
+
+    .summary-section { margin-top: 0; }
+    .summary-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0 0;
+      font-size: 14px;
+    }
+    .summary-table th {
+      text-align: left;
+      padding: 12px 14px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--mm-muted);
+      font-weight: 600;
+      border-bottom: 2px solid var(--mm-border-md);
+    }
+    .summary-table td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--mm-border);
+      color: var(--mm-slate-600);
+    }
+    .summary-table td:first-child { font-weight: 600; color: var(--mm-ink); }
+    .summary-table td .cost-tag { color: var(--mm-purple); font-weight: 600; }
+  </style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="shell">
+    <div class="brand"><a href="index.html">For Kura</a></div>
+    <nav>
+      <a href="index.html">Overview</a>
+      <a href="tutorial-menu.html" class="active">Tutorial menu</a>
+      <a href="instagram-audit.html">Instagram</a>
+      <a href="website-design-review.html">Website design</a>
+      <a href="website-seo-audit.html">Website SEO</a>
+      <a href="gpt-image-2-prompts.html">GPT Image 2</a>
+      <a href="seedance-prompts.html">Seedance 2.0</a>
+      <a href="session-1.html">Session 1</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="shell-narrow">
+    <h1><em>Tutorial menu</em>.</h1>
+    <p class="lede">
+      Every item is a standalone workflow with a clear deliverable you walk away with.
+      For people who don't have a technical background but want to fully utilize AI's potential.
+      Some items are more technical and require more time than others, but each one is labeled
+      with its complexity level.
+    </p>
+  </div>
+</section>
+
+<!-- Item 1 -->
+<section>
+  <div class="shell-narrow">
+    <div class="item-card">
+      <div class="item-header">
+        <span class="item-num">01</span>
+        <h3 class="item-title">Instant marketing makeover</h3>
+        <span class="item-level level-beginner">Beginner</span>
+      </div>
+      <p class="item-what">
+        Turn reference images you like + your own product photos into polished, on-brand marketing visuals.
+        Then make them editable and shareable instantly.
+      </p>
+      <div class="item-detail-grid">
+        <div class="detail-box">
+          <div class="detail-label">Workflow</div>
+          <ul>
+            <li>Find social media posts or ads with aesthetics you like</li>
+            <li>Upload those + your product photos into GPT Image 2</li>
+            <li>AI combines the style with your actual product</li>
+            <li>Import into Canva Magic Studio to make the result editable (swap text, adjust layout)</li>
+            <li>Export or share via Canva link (no website or domain needed)</li>
+          </ul>
+        </div>
+        <div class="detail-box">
+          <div class="detail-label">Tools + cost</div>
+          <p>
+            <strong>GPT Image 2</strong> — included in ChatGPT Plus<br>
+            <strong>Canva Magic Studio</strong> — included in Canva Pro<br><br>
+            <span class="cost">~$35/mo</span> (ChatGPT Plus $20 + Canva Pro $15)
+          </p>
+        </div>
+      </div>
+      <div class="deliverable-box">
+        <div class="detail-label">You walk away with</div>
+        <p>5-10 ready-to-post social media visuals and marketing assets</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Item 2 -->
+<section>
+  <div class="shell-narrow">
+    <div class="item-card">
+      <div class="item-header">
+        <span class="item-num">02</span>
+        <h3 class="item-title">Brand system + design system</h3>
+        <span class="item-level level-intermediate">Beginner-Intermediate</span>
+      </div>
+      <p class="item-what">
+        A complete visual brand identity (colors, typography, mood, visual rules) that AI agents can
+        understand and apply automatically to everything you create.
+      </p>
+      <div class="item-detail-grid">
+        <div class="detail-box">
+          <div class="detail-label">Workflow</div>
+          <ul>
+            <li>Define brand identity through guided conversation</li>
+            <li>Generate a visual brand book using GPT Image 2 (palette, typography, mood board)</li>
+            <li>Build a design system in Claude Design that translates your brand into a format AI can reuse</li>
+            <li>Claude Design reads your brand and applies it consistently to any future project</li>
+          </ul>
+        </div>
+        <div class="detail-box">
+          <div class="detail-label">Tools + cost</div>
+          <p>
+            <strong>GPT Image 2</strong> — included in ChatGPT Plus<br>
+            <strong>Claude Design</strong> — included in Claude Pro<br><br>
+            <span class="cost">~$40/mo</span> (ChatGPT Plus $20 + Claude Pro $20)
+          </p>
+        </div>
+      </div>
+      <div class="deliverable-box">
+        <div class="detail-label">You walk away with</div>
+        <p>A visual brand book + a reusable AI design system</p>
+      </div>
+      <div style="margin-top: 18px;">
+        <div class="detail-label">Example brand book (AI-generated)</div>
+        <img src="assets/examples/brand-book-example.png" alt="Example AI-generated brand book for a jewellery brand" style="width: 100%; border-radius: var(--radius-md); border: 1px solid var(--mm-border); margin-top: 8px;" />
+        <p class="product-caption">An example of an AI-generated brand book. Yours would be built around your specific brand aesthetic.</p>
+      </div>
+      <div class="note-box">
+        <strong>Why this matters:</strong> This is the foundation. Once you have a design system, every
+        presentation, website, or app you create with AI will automatically match your brand without you
+        manually styling anything.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Item 3 -->
+<section>
+  <div class="shell-narrow">
+    <div class="item-card">
+      <div class="item-header">
+        <span class="item-num">03</span>
+        <h3 class="item-title">AI presentations</h3>
+        <span class="item-level level-beginner">Beginner</span>
+      </div>
+      <p class="item-what">
+        Create professional, branded presentation decks by talking to AI. No design skills needed.
+      </p>
+      <div class="item-detail-grid">
+        <div class="detail-box">
+          <div class="detail-label">Workflow</div>
+          <ul>
+            <li>Describe what the presentation needs to cover</li>
+            <li>AI builds the deck using your brand system from Item 2</li>
+            <li>Review, refine through conversation</li>
+            <li>Export as PPTX, PDF, or shareable link</li>
+            <li>Open in Google Slides or import into Canva for further editing</li>
+          </ul>
+        </div>
+        <div class="detail-box">
+          <div class="detail-label">Tools + cost</div>
+          <p>
+            <strong>Claude + Claude Design</strong> — included in Claude Pro<br><br>
+            <span class="cost">~$20/mo</span> (Claude Pro)
+          </p>
+        </div>
+      </div>
+      <div class="deliverable-box">
+        <div class="detail-label">You walk away with</div>
+        <p>A polished presentation deck (client proposal, event pitch, product showcase)</p>
+      </div>
+      <div class="note-box">
+        <strong>Prerequisite:</strong> Brand system (Item 2) makes this significantly better.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Item 4 -->
+<section>
+  <div class="shell-narrow">
+    <div class="item-card">
+      <div class="item-header">
+        <span class="item-num">04</span>
+        <h3 class="item-title">AI website + app building (vibe coding)</h3>
+        <span class="item-level level-intermediate">Intermediate</span>
+      </div>
+      <p class="item-what">
+        Build and deploy a website or simple app that matches your brand, without traditional coding knowledge.
+      </p>
+      <div class="item-detail-grid">
+        <div class="detail-box">
+          <div class="detail-label">Workflow</div>
+          <ul>
+            <li>Start from your brand design system (Item 2)</li>
+            <li>Describe what you need (landing page, product showcase, event page, simple app)</li>
+            <li>AI generates the code using your brand system</li>
+            <li>Share via GitHub Pages for a free live URL (or Vercel if you need more features)</li>
+          </ul>
+        </div>
+        <div class="detail-box">
+          <div class="detail-label">Tools + cost</div>
+          <p>
+            <strong>Claude Code / Google AI Studio</strong> — Claude Pro or free<br>
+            <strong>Claude Design</strong> — included in Claude Pro<br>
+            <strong>GitHub Pages</strong> — free<br><br>
+            <span class="cost">~$20/mo</span> (Claude Pro, GitHub Pages free)
+          </p>
+        </div>
+      </div>
+      <div class="deliverable-box">
+        <div class="detail-label">You walk away with</div>
+        <p>A live, branded website or app</p>
+      </div>
+      <div class="note-box">
+        <strong>Note:</strong> Most small business owners won't need a database. Simple static sites and
+        single-page apps cover 90% of use cases (event pages, product showcases, seasonal landing pages,
+        custom client portals).
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Item 5 -->
+<section>
+  <div class="shell-narrow">
+    <div class="item-card">
+      <div class="item-header">
+        <span class="item-num">05</span>
+        <h3 class="item-title">Generative AI fundamentals</h3>
+        <span class="item-level level-beginner">Beginner</span>
+      </div>
+      <p class="item-what">
+        Understand how to create images and videos with AI. Learn the core prompting frameworks so you can
+        create marketing visuals independently.
+      </p>
+      <div class="item-detail-grid">
+        <div class="detail-box">
+          <div class="detail-label">Workflow</div>
+          <ul>
+            <li>Image creation basics: GPT Image 2 as primary tool, or OpenArt for more advanced control</li>
+            <li>Free option available: Google AI Studio for getting started at zero cost</li>
+            <li>Core prompting framework (what to include, how to describe what you want)</li>
+            <li>How to turn a still image into a video</li>
+            <li>Hands-on with AI video generation (Seedance, Veo, Kling, Sora)</li>
+          </ul>
+        </div>
+        <div class="detail-box">
+          <div class="detail-label">Tools + cost</div>
+          <p>
+            <strong>GPT Image 2</strong> — included in ChatGPT Plus<br>
+            <strong>OpenArt</strong> — free tier, paid plans from $12/mo<br>
+            <strong>Google AI Studio</strong> — free<br>
+            <strong>Seedance 2.0</strong> — free tier available<br><br>
+            <span class="cost">Free to ~$20/mo</span>
+          </p>
+        </div>
+      </div>
+      <div class="deliverable-box">
+        <div class="detail-label">You walk away with</div>
+        <p>Prompting cheat sheet + first set of AI-generated images and a short video</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Item 6 -->
+<section>
+  <div class="shell-narrow">
+    <div class="item-card">
+      <div class="item-header">
+        <span class="item-num">06</span>
+        <h3 class="item-title">Video editing with CapCut</h3>
+        <span class="item-level level-practical">Practical</span>
+      </div>
+      <p class="item-what">
+        Turn raw footage into polished short-form videos using templates and AI-assisted editing.
+      </p>
+      <div class="item-detail-grid">
+        <div class="detail-box">
+          <div class="detail-label">Workflow</div>
+          <ul>
+            <li>Shoot raw footage on your phone (product clips, behind-the-scenes, unboxing)</li>
+            <li>CapCut AutoCut / Auto Clipper: AI selects best moments, applies template, adds music and transitions</li>
+            <li>AI image and video generation directly inside CapCut</li>
+            <li>Auto-captions, background removal, voice effects</li>
+            <li>Core editing basics: trimming, transitions, text overlays, audio</li>
+          </ul>
+        </div>
+        <div class="detail-box">
+          <div class="detail-label">Tools + cost</div>
+          <p>
+            <strong>CapCut</strong> — free, or Pro for extra features<br><br>
+            <span class="cost">Free to $9.99/mo</span>
+          </p>
+        </div>
+      </div>
+      <div class="deliverable-box">
+        <div class="detail-label">You walk away with</div>
+        <p>3-5 short-form videos ready for social media</p>
+      </div>
+      <div class="note-box">
+        <strong>Note:</strong> Primarily taught on mobile (phone-first workflow), since that's where most
+        raw footage lives. CapCut also has a desktop version for more detailed editing. Includes many
+        AI features beyond basic editing: auto-captions, AI image/video generation, background removal.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Item 7 -->
+<section>
+  <div class="shell-narrow">
+    <div class="item-card">
+      <div class="item-header">
+        <span class="item-num">07</span>
+        <h3 class="item-title">AI skills + operations system</h3>
+        <span class="item-level level-intermediate">Intermediate</span>
+      </div>
+      <p class="item-what">
+        Understand how to install and use AI skills (specialized capabilities) safely, and set up an organized
+        AI workspace that keeps everything aligned.
+      </p>
+      <div class="item-detail-grid">
+        <div class="detail-box">
+          <div class="detail-label">Workflow</div>
+          <ul>
+            <li>What are AI skills and why they matter (specialized tools that make AI better at specific tasks)</li>
+            <li>How to find, evaluate, and safely install skills</li>
+            <li>Setting up an AI operations system: organized folder structure, memory, brand files, project context</li>
+            <li>One-click deployment: a single prompt that sets up your entire AI workspace</li>
+          </ul>
+        </div>
+        <div class="detail-box">
+          <div class="detail-label">Tools + cost</div>
+          <p>
+            <strong>Claude + skills ecosystem</strong> — included in Claude Pro<br><br>
+            <span class="cost">~$20/mo</span> (Claude Pro)
+          </p>
+        </div>
+      </div>
+      <div class="deliverable-box">
+        <div class="detail-label">You walk away with</div>
+        <p>A working AI workspace with relevant skills installed</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Item 8 -->
+<section>
+  <div class="shell-narrow">
+    <div class="item-card">
+      <div class="item-header">
+        <span class="item-num">08</span>
+        <h3 class="item-title">Research-to-content pipeline (manual)</h3>
+        <span class="item-level level-intermediate">Intermediate</span>
+      </div>
+      <p class="item-what">
+        Research any topic deeply, turn it into a script, and produce a talking-head video without filming
+        yourself using an AI avatar.
+      </p>
+      <div class="item-detail-grid">
+        <div class="detail-box">
+          <div class="detail-label">Workflow</div>
+          <ul>
+            <li>Upload sources into NotebookLM (articles, competitor sites, industry reports)</li>
+            <li>NotebookLM synthesizes the research into key insights</li>
+            <li>Feed insights to AI to write a video script</li>
+            <li>Create your AI voice clone and avatar on HeyGen (your digital twin that talks and gestures like you)</li>
+            <li>HeyGen generates the talking-head video from your script</li>
+            <li>Add B-roll footage (product shots, lifestyle clips) in CapCut</li>
+            <li>Post to social media</li>
+          </ul>
+        </div>
+        <div class="detail-box">
+          <div class="detail-label">Tools + cost</div>
+          <p>
+            <strong>NotebookLM</strong> — free<br>
+            <strong>Claude</strong> — included in Claude Pro<br>
+            <strong>HeyGen</strong> — free tier for short clips, paid from $24/mo<br>
+            <strong>CapCut</strong> — free, or Pro $9.99/mo<br><br>
+            <span class="cost">Free to ~$54/mo</span>
+          </p>
+        </div>
+      </div>
+      <div class="deliverable-box">
+        <div class="detail-label">You walk away with</div>
+        <p>A complete educational or promotional video, ready to post</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Item 9 -->
+<section>
+  <div class="shell-narrow">
+    <div class="item-card">
+      <div class="item-header">
+        <span class="item-num">09</span>
+        <h3 class="item-title">Research-to-content pipeline (automated)</h3>
+        <span class="item-level level-advanced">Advanced</span>
+      </div>
+      <p class="item-what">
+        Automate the entire process from Item 8 so AI agents handle most of the work.
+      </p>
+      <div class="item-detail-grid">
+        <div class="detail-box">
+          <div class="detail-label">Workflow</div>
+          <ul>
+            <li>AI agent researches the topic</li>
+            <li>AI agent writes the script</li>
+            <li>AI agent generates the avatar video via HeyGen</li>
+            <li>AI agent cuts in B-roll</li>
+            <li>Content goes into Airtable content calendar</li>
+            <li>Auto-scheduled and posted via Blotato across all platforms</li>
+          </ul>
+        </div>
+        <div class="detail-box">
+          <div class="detail-label">Tools + cost</div>
+          <p>
+            <strong>Claude</strong> — included in Claude Pro ($20/mo)<br>
+            <strong>NotebookLM</strong> — free<br>
+            <strong>HeyGen</strong> — from $24/mo<br>
+            <strong>CapCut</strong> — free or Pro $9.99/mo<br>
+            <strong>Airtable</strong> — free tier, or Plus $20/seat/mo<br>
+            <strong>Blotato</strong> — $29/mo starter<br><br>
+            <span class="cost">~$93/mo+</span>
+          </p>
+        </div>
+      </div>
+      <div class="deliverable-box">
+        <div class="detail-label">You walk away with</div>
+        <p>A fully automated content production and publishing system</p>
+      </div>
+      <div class="note-box">
+        <strong>Note:</strong> This is the most advanced item and requires more technical setup. Learn
+        the manual version (Item 8) first, then automate each step one at a time. Not everyone will
+        need this level of automation.
+      </div>
+    </div>
+  </div>
+</section>
+
+
+</body>
+</html>

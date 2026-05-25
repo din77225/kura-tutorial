@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Website SEO audit — Kura</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="topbar">
+  <div class="shell">
+    <div class="brand"><a href="index.html">For Kura</a></div>
+    <nav>
+      <a href="index.html">Overview</a>
+      <a href="tutorial-menu.html">Tutorial menu</a>
+      <a href="instagram-audit.html">Instagram</a>
+      <a href="website-design-review.html">Website design</a>
+      <a href="website-seo-audit.html" class="active">Website SEO</a>
+      <a href="gpt-image-2-prompts.html">GPT Image 2</a>
+      <a href="seedance-prompts.html">Seedance 2.0</a>
+      <a href="session-1.html">Session 1</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="shell-narrow">
+    <h1>SEO read on <em>kurajewellery.com</em>.</h1>
+    <p class="lede">
+      Crawled the homepage, the all-collections page, a representative product page, and the Our Story
+      page. Tested where Kura ranks for the queries that matter. Healthy at the technical layer, missing
+      at the content layer, and losing on the queries where it should be winning.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="shell-narrow">
+    <h2>The numbers.</h2>
+
+    <div class="kpi-row">
+      <div class="kpi">
+        <div class="label">Sitemap</div>
+        <div class="value">5</div>
+        <div class="note">Sub-sitemaps (products, collections, pages, blogs, agentic)</div>
+      </div>
+      <div class="kpi">
+        <div class="label">Robots.txt</div>
+        <div class="value">OK</div>
+        <div class="note">Shopify default, no crawl issues</div>
+      </div>
+      <div class="kpi">
+        <div class="label">Brand-name rank</div>
+        <div class="value">#1</div>
+        <div class="note">For "kura jewellery"</div>
+      </div>
+      <div class="kpi">
+        <div class="label">Product schema</div>
+        <div class="value">Missing</div>
+        <div class="note">No visible JSON-LD on product pages</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="shell-narrow">
+    <h2>Where Kura ranks well.</h2>
+
+    <div class="block">
+      <h3>"kura jewellery" — position 1</h3>
+      <p style="color: var(--mm-slate-600);">Branded search owns the SERP, as it should. Both the main domain and the IG account rank in the top three.</p>
+    </div>
+
+    <div class="block">
+      <h3>"18k gold cage necklace bespoke" — position 2</h3>
+      <p style="color: var(--mm-slate-600);">Mid-tail query Kura should own, and largely does. Only AUVERE outranks. This is a category Kura can defend with more depth — a dedicated /collections/cage-collection page with proper internal links would push toward position 1.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="shell-narrow">
+    <h2>Where Kura is losing.</h2>
+
+    <div class="block">
+      <h3>"alphabet diamond necklace 18k gold buy online" — not in top 10</h3>
+      <p style="color: var(--mm-slate-600);">Despite the Juliet Alphabet Diamonds collection being a clear bestseller, Kura isn't appearing on a high-intent query they sell directly into. Gorjana, Senco, CaratLane, Auraten, and even Tiffany rank above. The fix is on-page: the current collection page title is generic, the H1 doesn't include the keyword phrase, and there's no schema markup signaling the products to Google.</p>
+    </div>
+
+    <div class="block">
+      <h3>"stackable rings 18k gold canada online" — not in top 10</h3>
+      <p style="color: var(--mm-slate-600);">Kura is based in Vancouver but isn't ranking for Canadian stackable-ring searches. Mejuri, Blue Ruby (Vancouver competitor), and Pandora dominate. The "stack, style, personalize" positioning is the whole brand and the site isn't being credited for it because there's no dedicated "stackable rings" landing page, no Canadian geo-tagging, and no local schema.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="shell-narrow">
+    <h2>Technical SEO findings.</h2>
+
+    <div class="block">
+      <h3>No JSON-LD product schema visible.</h3>
+      <p style="color: var(--mm-slate-600);">This is the biggest single fix on the site. Without Product, Offer, AggregateRating, and BreadcrumbList structured data, Google can't pull Kura products into rich results — no price, no star rating, no availability shown in the SERP. Every Shopify theme has a schema toggle or can take a 30-line snippet in theme.liquid. Worth one developer afternoon.</p>
+    </div>
+
+    <div class="block">
+      <h3>Title tag patterns are weak.</h3>
+      <p style="color: var(--mm-slate-600);">Examples found: <em>"Shop Signature Cage Necklace (No Diamonds) on Oval Long Chain in 18K Gold Online"</em> (starts with "Shop", ends with "Online", brand name absent). And <em>"Kura Jewellery - Our Story | Kura Jewellery"</em> (brand name written twice). Strong pattern: <code>{Product Name} in 18K Gold | Kura Fine Jewellery</code> for products, <code>{Page} | Kura Fine Jewellery</code> for pages. Easy site-wide fix in Shopify theme settings.</p>
+    </div>
+
+    <div class="block">
+      <h3>Meta descriptions are missing or auto-generated.</h3>
+      <p style="color: var(--mm-slate-600);">Not visible in source on the pages tested. Google falls back to the first body text, which on the homepage starts with "Discover a world of Kura Jewellery" — no keywords, no value prop, no CTA. Every collection and product page should have a hand-written 150-character meta description with the keyword plus the anti-markup angle.</p>
+    </div>
+
+    <div class="block">
+      <h3>Heading structure is OK on the homepage, weak on Our Story.</h3>
+      <p style="color: var(--mm-slate-600);">Homepage uses one H1, multiple H2s. Good. Our Story uses <em>"WHO ? WHEN ? WHERE ?"</em> and <em>"WHAT IS IT ABOUT ?"</em> as H2s. Search engines de-weight non-descriptive headers. Replace with the actual keywords ("Founded in Hong Kong, 2009", "How Kura is priced", "Where Kura jewellery is made").</p>
+    </div>
+
+    <div class="block">
+      <h3>Sitemap is healthy.</h3>
+      <p style="color: var(--mm-slate-600);">Standard Shopify five-sitemap setup including an agentic-discovery sitemap (newer Shopify feature, good). No action needed.</p>
+    </div>
+
+    <div class="block">
+      <h3>Robots.txt is fine.</h3>
+      <p style="color: var(--mm-slate-600);">Standard Shopify with a Shopify-added clause about agent checkout flows. Doesn't affect Google or any normal crawler. Leave as-is.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="shell-narrow">
+    <h2>Content gaps.</h2>
+
+    <div class="block">
+      <h3>No blog content active.</h3>
+      <p style="color: var(--mm-slate-600);">A blog sitemap exists but the content isn't competing on the queries Kura should own. Four evergreen posts would move the needle: "How to stack necklaces without tangling", "18K vs 14K vs gold-filled: what's actually different", "Fair pricing in fine jewellery: what you're really paying for", "What to ask before commissioning a bespoke piece". Each is on-brand, ranks for high-intent searches, and feeds the bespoke funnel.</p>
+    </div>
+
+    <div class="block">
+      <h3>No dedicated Vancouver / local presence.</h3>
+      <p style="color: var(--mm-slate-600);">Erny is in Vancouver, the brand has Vancouver customers, but the site doesn't signal local. A simple "Visit us in Vancouver" or "Bespoke consultations in Vancouver" landing page with local schema (LocalBusiness, address, hours) opens an entire category of Vancouver-jeweller searches.</p>
+    </div>
+
+    <div class="block">
+      <h3>Off-site reputation is thin.</h3>
+      <p style="color: var(--mm-slate-600);">Judge.me reviews are on-site and strong, but Trustpilot shows essentially zero verified reviews. Encouraging existing happy customers to leave Trustpilot and Google Business reviews would raise the social-proof signal that Google factors into local rankings.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="shell-narrow">
+    <h2>Ranked actions.</h2>
+    <p style="color: var(--mm-slate-600);">In order of cost-to-impact. The top three are all one-afternoon fixes with site-wide effect.</p>
+
+    <table class="kicker-table">
+      <thead>
+        <tr><th style="width:8%">#</th><th>Action</th><th style="width:18%">Effort</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>1</strong></td><td>Add JSON-LD Product schema across all product pages</td><td>1 dev afternoon</td></tr>
+        <tr><td><strong>2</strong></td><td>Rewrite title-tag pattern site-wide (<code>{Page} | Kura Fine Jewellery</code>)</td><td>2-3 hours</td></tr>
+        <tr><td><strong>3</strong></td><td>Hand-write meta descriptions for top 20 product + collection pages</td><td>1 afternoon</td></tr>
+        <tr><td><strong>4</strong></td><td>Rewrite Our Story page headings to be descriptive, not interrogative</td><td>1 hour</td></tr>
+        <tr><td><strong>5</strong></td><td>Build a dedicated <code>/collections/stackable-rings</code> landing page with proper H1, copy, and internal links</td><td>1 day</td></tr>
+        <tr><td><strong>6</strong></td><td>Build a <code>/pages/vancouver</code> page with LocalBusiness schema</td><td>1 day</td></tr>
+        <tr><td><strong>7</strong></td><td>Publish 4 evergreen blog posts (one per month for the first quarter)</td><td>Ongoing</td></tr>
+        <tr><td><strong>8</strong></td><td>Request Trustpilot + Google Business reviews from recent customers</td><td>15 min/week</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="shell-narrow">
+    <h2>A note on what's not in this audit.</h2>
+    <p style="color: var(--mm-slate-600); max-width: 720px; font-size: 15px;">
+      Keyword position tracking, backlink profile, organic traffic estimates, and competitor-share-of-voice
+      all need a paid tool (Ahrefs, SEMrush, or similar) to measure properly. The findings above come from
+      live SERP testing, on-page inspection, and public sitemaps. If you want a deeper data layer at some
+      point, a single Ahrefs site audit run gives you the rest in one report.
+    </p>
+  </div>
+</section>
+
+</body>
+</html>

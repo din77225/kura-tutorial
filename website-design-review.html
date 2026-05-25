@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Website design review — Kura</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="topbar">
+  <div class="shell">
+    <div class="brand"><a href="index.html">For Kura</a></div>
+    <nav>
+      <a href="index.html">Overview</a>
+      <a href="tutorial-menu.html">Tutorial menu</a>
+      <a href="instagram-audit.html">Instagram</a>
+      <a href="website-design-review.html" class="active">Website design</a>
+      <a href="website-seo-audit.html">Website SEO</a>
+      <a href="gpt-image-2-prompts.html">GPT Image 2</a>
+      <a href="seedance-prompts.html">Seedance 2.0</a>
+      <a href="session-1.html">Session 1</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="shell-narrow">
+    <h1>A design read on <em>kurajewellery.com</em>.</h1>
+    <p class="lede">
+      Walked the homepage, collections, a product detail page, and the Our Story page. The product range
+      is genuinely luxury but the site reads at a softer tier than the pieces deserve. Here's what's
+      working, what's working against you, and where to focus first.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="shell-narrow">
+    <h2>What's working.</h2>
+    <ul class="clean">
+      <li><strong>Hero photography</strong> is good. The animated GIF treatment communicates motion and modernity.</li>
+      <li><strong>Generous whitespace</strong> in the grid. The product photos breathe instead of crowding each other.</li>
+      <li><strong>Mega-menu structure</strong> is sophisticated and matches the depth of the catalog.</li>
+      <li><strong>Product detail pages</strong> tell a story. The cage etymology, the pricing philosophy, the materials breakdown — none of that is generic Shopify copy. Keep it.</li>
+      <li><strong>Six product photos per piece</strong> with multiple angles. This is well above the boutique average.</li>
+      <li><strong>Judge.me reviews are embedded</strong> on product pages. Real customer voice, named reviewers, 100% 5-star on the Signature Cage.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="shell-narrow">
+    <h2>What's holding the premium feel back.</h2>
+
+    <div class="block">
+      <h3>Typography on internal pages reads like a worksheet.</h3>
+      <p style="color: var(--mm-slate-600);">The Our Story page uses headers like <em>"WHO ? WHEN ? WHERE ?"</em> and <em>"WHAT IS IT ABOUT ?"</em> — all caps, space before the question mark, no hierarchy variation. It's the single biggest tell that this is a small-business site, not a luxury house. Cartier, Mejuri, Catbird all use mixed-case editorial headers with a serif/sans pairing. Replace these with phrases like <em>"Founded in Hong Kong, 2009"</em>, <em>"The pricing philosophy"</em>, <em>"Where each piece is made"</em>.</p>
+    </div>
+
+    <div class="block">
+      <h3>The hero says "Discover a world of Kura Jewellery" — but doesn't say what kind of world.</h3>
+      <p style="color: var(--mm-slate-600);">Brand-name-as-headline is what big houses do because their brand already does the work (Cartier, Bvlgari). For a 2,400-follower brand, the hero needs to teach the visitor what makes Kura different in the first 3 seconds. Something like <em>"Fine jewellery, fairly priced. Crafted in Italy and Hong Kong."</em> uses the anti-markup ethos and the artisan story at the same time. It's also a better SEO signal.</p>
+    </div>
+
+    <div class="block">
+      <h3>Erny is invisible on the homepage.</h3>
+      <p style="color: var(--mm-slate-600);">Her story is the strongest moat the brand has — banking VP, GIA-trained, lived in eight cities, anti-markup ethos. None of that surfaces until someone clicks Our Story (which most won't). At minimum, a small "From the founder" panel on the homepage with her photo and a 2-line quote pulls the brand from "Shopify store" to "person you can trust." Mejuri and Aurate both do this within the first scroll.</p>
+    </div>
+
+    <div class="block">
+      <h3>The product page price comparison reads as discount-store, not luxury.</h3>
+      <p style="color: var(--mm-slate-600);">Lines like <em>"$2,250.00 — Estimated Retail Price Elsewhere: $5,625.00"</em> are how Marshall's frames a deal, not how an 18K gold brand should frame fair pricing. The anti-markup story is real and worth telling, but the framing should be confident, not comparative. Try: <em>"$2,250 — priced at fair multiple of materials and craft, not industry markup."</em> Same number, completely different read.</p>
+    </div>
+
+    <div class="block">
+      <h3>The collection grid is dense, premium uses negative space.</h3>
+      <p style="color: var(--mm-slate-600);">Five products per row at the desktop breakpoint pushes each piece into a thumbnail. Luxury houses sit at 3 per row, sometimes 2 for hero collections. The math: bigger images, fewer competing CTAs in the viewport, longer dwell time per piece. The whole catalog can stay accessible behind one more scroll.</p>
+    </div>
+
+    <div class="block">
+      <h3>The pricing philosophy chart on Our Story is invisible.</h3>
+      <p style="color: var(--mm-slate-600);">The anti-markup philosophy is THE strongest differentiator and it's buried in a chart on the Our Story page. This deserves a dedicated panel on the homepage and a permanent footer line ("Fair pricing, not industry markup"). Right now it's a footnote.</p>
+    </div>
+
+    <div class="block">
+      <h3>No founder face means no founder voice.</h3>
+      <p style="color: var(--mm-slate-600);">The site has a great photo of Erny on the Our Story page. Pull it onto the homepage, into product detail pages ("a note from Erny"), and into the bespoke booking flow. Buyers paying $1,000-$5,000 for a piece want to know who designed it. Right now they have to dig.</p>
+    </div>
+
+    <div class="block">
+      <h3>Hero animated GIF is a performance and accessibility risk.</h3>
+      <p style="color: var(--mm-slate-600);">GIFs are 10-100x larger than equivalent MP4 or WebM. On mobile, that's a noticeable load time hit. Convert to inline autoplay MP4/WebM with <code>playsinline muted</code> attributes. Same visual, fraction of the bandwidth. Also add <code>prefers-reduced-motion</code> handling so viewers who've turned off motion get a still image instead.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="shell-narrow">
+    <h2>Quick wins (one afternoon each).</h2>
+    <ul class="check">
+      <li>Rewrite Our Story headers from <em>"WHO ? WHEN ? WHERE ?"</em> to proper editorial headlines</li>
+      <li>Add a "From the founder" panel to the homepage with Erny's photo and a 2-line quote</li>
+      <li>Reframe product-page price-comparison copy from "Estimated Retail Price Elsewhere" to a confident fair-pricing line</li>
+      <li>Convert hero GIF to MP4/WebM (any developer can do this in under an hour)</li>
+      <li>Add a permanent footer line: <em>"Fair pricing, not industry markup. Crafted in Italy and Hong Kong since 2009."</em></li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="shell-narrow">
+    <h2>Bigger projects (worth scoping with a designer).</h2>
+    <ul class="check">
+      <li>Drop the collection grid from 5-up to 3-up at desktop and revisit product-card type</li>
+      <li>Build a dedicated "Pricing philosophy" page (not buried in Our Story) and link it from every product page</li>
+      <li>Redesign the Our Story page as an editorial spread, not a worksheet — full-width images, generous serif headers, a real beginning-middle-end narrative</li>
+      <li>Add a "Meet Erny" / "Book a consultation" funnel that runs hero → founder bio → bespoke booking, separate from the standard shop funnel</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="shell-narrow">
+    <h2>The single highest-leverage change.</h2>
+    <p style="color: var(--mm-slate-600); max-width: 700px;">
+      If you only do one thing: <strong>put Erny on the homepage</strong>. Photo, name, one-sentence
+      story, link to bespoke. Every other change here is a multiplier on a brand that already feels
+      personal. Without the founder visible, the site reads as one of a thousand Shopify stores. With
+      her visible, it reads as a designer brand with a person behind it. That's the entire competitive
+      moat in 2026.
+    </p>
+  </div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Session 1 — Kura</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="topbar">
+  <div class="shell">
+    <div class="brand"><a href="index.html">For Kura</a></div>
+    <nav>
+      <a href="index.html">Overview</a>
+      <a href="tutorial-menu.html">Tutorial menu</a>
+      <a href="instagram-audit.html">Instagram</a>
+      <a href="website-design-review.html">Website design</a>
+      <a href="website-seo-audit.html">Website SEO</a>
+      <a href="gpt-image-2-prompts.html">GPT Image 2</a>
+      <a href="seedance-prompts.html">Seedance 2.0</a>
+      <a href="session-1.html" class="active">Session 1</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="shell-narrow">
+    <h1>Session 1: <em>GPT Image 2 + brand book + image editing</em>.</h1>
+    <p class="lede">
+      One workflow, end to end. Generate jewellery images with GPT Image 2, lock them to a brand book
+      so the look stays consistent, then edit and refine in Canva. By the end you can run the full loop
+      on your own product line.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="shell-narrow">
+    <h2>What we'll cover.</h2>
+    <ul class="clean">
+      <li><strong>GPT Image 2 prompts.</strong> Walk through the <a href="gpt-image-2-prompts.html">prompt dossier</a>, generate a few hero shots on real Kura pieces.</li>
+      <li><strong>Transform images.</strong> Use GPT Image 2's edit endpoint to drop a clean Kura product photo in and have the model recompose the scene around it. The piece stays identical, only the environment changes.</li>
+      <li><strong>Brand book.</strong> Generate a one-page brand book from your existing aesthetic so every future AI image inherits the same palette, typography, and tone.</li>
+      <li><strong>Brand identity lock.</strong> Use the brand book as a reference image alongside your prompt to keep outputs on-brand instead of generic.</li>
+      <li><strong>Image editing.</strong> Pull AI outputs into Canva Magic Layer to clean up metal edges, swap backgrounds, fix small artefacts, and finalize for the feed.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="shell-narrow">
+    <h2>Brand book — generate.</h2>
+    <p style="color: var(--mm-slate-600); max-width: 720px;">
+      The first half of the brand-book workflow. Upload a reference image that captures the Kura
+      aesthetic you want to commit to. The model reads that image and outputs a one-page brand book
+      with palette, typography, and tone of voice. Save that brand book PNG — it becomes the
+      reference for every future generation.
+    </p>
+    <div class="prompt"><span class="prompt-text">Create a clean, modern brand book mood board using the provided image as the core inspiration. Place the brand logo at the top center in a style that matches the mood of the image.
+
+On the left side, add a section titled "Style Aesthetic:" with the subtitle "What we aim our style to look like". Present the provided image as a neat grid or collage that reflects its natural style and tone.
+
+On the right side, create structured brand book sections. Let all visual choices be inferred from the uploaded image:
+
+Font:
+Show two font examples labeled "Headlines" and "Subheadlines". Choose font styles that match the character, mood, and feeling of the provided image.
+
+Main color palette:
+Generate a set of color swatches directly based on the dominant and supporting colors found in the provided image. Label each swatch with simple names that match the tones.
+
+Tone of voice:
+Create a short list of brand voice traits that reflect the emotions, attitude, and personality suggested by the provided image.
+
+Keep the overall layout minimal, balanced, and clean with gentle spacing and simple black text. The final result should look like a polished brand book page that adapts itself entirely to the style of the uploaded image.</span></div>
+    <div class="adapt"><strong>How to use.</strong> Upload one Kura reference image (a recent campaign shot, a hero piece on velvet, or a mood-board photo that feels right). The model returns a brand book page. Download that PNG. From now on, attach it alongside any image prompt so the output lands in the same visual world.</div>
+  </div>
+</section>
+
+<section>
+  <div class="shell-narrow">
+    <h2>Brand book — apply.</h2>
+    <p style="color: var(--mm-slate-600); max-width: 720px;">
+      The second half. Once you have a brand book PNG, you can pass it together with any existing
+      image (a product shot, a thumbnail, an ad creative) and have the model restyle the source into
+      the brand. Composition stays, palette and feel transfer over.
+    </p>
+    <div class="prompt"><span class="prompt-text">Restyle the source image using the brand book as the visual reference. Keep the original layout, composition, and text hierarchy intact. Pull every visual choice from the brand book: colors, typography, mood, and spacing. Recolor all elements inside the source (clothing, props, lighting, backgrounds) to fit the brand palette.</span></div>
+    <div class="adapt"><strong>The recolor clause matters.</strong> Without "Recolor all elements inside the source...", the model preserves the original colors of things in the photo (a red dress stays red, an orange background stays orange), which defeats the workflow. Keep that line in.</div>
+  </div>
+</section>
+
+<section>
+  <div class="shell-narrow">
+    <h2>The full loop.</h2>
+    <p style="color: var(--mm-slate-600); max-width: 700px;">
+      Once we've walked through both halves, this is the rhythm you'll be able to run on your own:
+    </p>
+    <ul class="checklist" data-group="full-loop">
+      <li><label><input type="checkbox" data-key="loop-1" /><span>Pick a prompt from the <a href="gpt-image-2-prompts.html">GPT Image 2 dossier</a> that matches the kind of post you need.</span></label></li>
+      <li><label><input type="checkbox" data-key="loop-2" /><span>Generate the first version. If you have a clean Kura product photo, attach it as a reference so the model knows the actual piece.</span></label></li>
+      <li><label><input type="checkbox" data-key="loop-3" /><span>Attach the brand book PNG as a second reference for palette and mood consistency.</span></label></li>
+      <li><label><input type="checkbox" data-key="loop-4" /><span>Take the output into Canva Magic Layer. Clean up edges, swap a background if needed, adjust the framing for IG.</span></label></li>
+      <li><label><input type="checkbox" data-key="loop-5" /><span>Save the working prompt + reference combo. Next time, swap in a different SKU and re-run.</span></label></li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="shell-narrow">
+    <h2>Bring this.</h2>
+    <ul class="checklist" data-group="bring">
+      <li><label><input type="checkbox" data-key="bring-1" /><span>3-5 product photos from kurajewellery.com that are your clearest hero shots (these become the references)</span></label></li>
+      <li><label><input type="checkbox" data-key="bring-2" /><span>One reference image that captures the aesthetic you want — could be a magazine page, a Pinterest pin, an existing Kura campaign shot</span></label></li>
+      <li><label><input type="checkbox" data-key="bring-3" /><span>A Canva account (free is fine, Pro unlocks Magic Layer)</span></label></li>
+      <li><label><input type="checkbox" data-key="bring-4" /><span>The piece you most want a new hero shot of</span></label></li>
+    </ul>
+  </div>
+</section>
+
+<script>
+// Interactive checklists — saves to localStorage, no backend needed
+document.querySelectorAll('.checklist input[type="checkbox"]').forEach(function(cb) {
+  var key = 'kura-session1-' + cb.dataset.key;
+  // Restore saved state
+  if (localStorage.getItem(key) === 'true') {
+    cb.checked = true;
+    cb.closest('li').classList.add('done');
+  }
+  // Save on change
+  cb.addEventListener('change', function() {
+    localStorage.setItem(key, cb.checked);
+    if (cb.checked) {
+      cb.closest('li').classList.add('done');
+    } else {
+      cb.closest('li').classList.remove('done');
+    }
+  });
+});
+</script>
+
+</body>
+</html>
