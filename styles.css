@@ -152,6 +152,15 @@ a:hover { color: var(--mm-purple-deep); text-decoration: underline; }
   z-index: 100;
   flex-direction: column;
 }
+/* Invisible bridge so hover doesn't break crossing the gap */
+.nav-group .nav-dropdown::before {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: 0;
+  right: 0;
+  height: 12px;
+}
 .nav-group:hover .nav-dropdown {
   display: flex;
 }
