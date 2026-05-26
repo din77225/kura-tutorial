@@ -108,12 +108,12 @@
 <section>
   <div class="shell-narrow">
     <h2>Quick wins (one afternoon each).</h2>
-    <ul class="check">
-      <li>Rewrite Our Story headers from <em>"WHO ? WHEN ? WHERE ?"</em> to proper editorial headlines</li>
-      <li>Add a "From the founder" panel to the homepage with Erny's photo and a 2-line quote</li>
-      <li>Reframe product-page price-comparison copy from "Estimated Retail Price Elsewhere" to a confident fair-pricing line</li>
-      <li>Convert hero GIF to MP4/WebM (any developer can do this in under an hour)</li>
-      <li>Add a permanent footer line: <em>"Fair pricing, not industry markup. Crafted in Italy and Hong Kong since 2009."</em></li>
+    <ul class="checklist" data-group="quick-wins">
+      <li><label><input type="checkbox" data-key="qw-1" /><span>Rewrite Our Story headers from <em>"WHO ? WHEN ? WHERE ?"</em> to proper editorial headlines</span></label></li>
+      <li><label><input type="checkbox" data-key="qw-2" /><span>Add a "From the founder" panel to the homepage with Erny's photo and a 2-line quote</span></label></li>
+      <li><label><input type="checkbox" data-key="qw-3" /><span>Reframe product-page price-comparison copy from "Estimated Retail Price Elsewhere" to a confident fair-pricing line</span></label></li>
+      <li><label><input type="checkbox" data-key="qw-4" /><span>Convert hero GIF to MP4/WebM (any developer can do this in under an hour)</span></label></li>
+      <li><label><input type="checkbox" data-key="qw-5" /><span>Add a permanent footer line: <em>"Fair pricing, not industry markup. Crafted in Italy and Hong Kong since 2009."</em></span></label></li>
     </ul>
   </div>
 </section>
@@ -121,11 +121,11 @@
 <section>
   <div class="shell-narrow">
     <h2>Bigger projects (worth scoping with a designer).</h2>
-    <ul class="check">
-      <li>Drop the collection grid from 5-up to 3-up at desktop and revisit product-card type</li>
-      <li>Build a dedicated "Pricing philosophy" page (not buried in Our Story) and link it from every product page</li>
-      <li>Redesign the Our Story page as an editorial spread, not a worksheet — full-width images, generous serif headers, a real beginning-middle-end narrative</li>
-      <li>Add a "Meet Erny" / "Book a consultation" funnel that runs hero → founder bio → bespoke booking, separate from the standard shop funnel</li>
+    <ul class="checklist" data-group="bigger-projects">
+      <li><label><input type="checkbox" data-key="bp-1" /><span>Drop the collection grid from 5-up to 3-up at desktop and revisit product-card type</span></label></li>
+      <li><label><input type="checkbox" data-key="bp-2" /><span>Build a dedicated "Pricing philosophy" page (not buried in Our Story) and link it from every product page</span></label></li>
+      <li><label><input type="checkbox" data-key="bp-3" /><span>Redesign the Our Story page as an editorial spread, not a worksheet — full-width images, generous serif headers, a real beginning-middle-end narrative</span></label></li>
+      <li><label><input type="checkbox" data-key="bp-4" /><span>Add a "Meet Erny" / "Book a consultation" funnel that runs hero → founder bio → bespoke booking, separate from the standard shop funnel</span></label></li>
     </ul>
   </div>
 </section>
@@ -142,6 +142,24 @@
     </p>
   </div>
 </section>
+
+<script>
+document.querySelectorAll('.checklist input[type="checkbox"]').forEach(function(cb) {
+  var key = 'kura-design-' + cb.dataset.key;
+  if (localStorage.getItem(key) === 'true') {
+    cb.checked = true;
+    cb.closest('li').classList.add('done');
+  }
+  cb.addEventListener('change', function() {
+    localStorage.setItem(key, cb.checked);
+    if (cb.checked) {
+      cb.closest('li').classList.add('done');
+    } else {
+      cb.closest('li').classList.remove('done');
+    }
+  });
+});
+</script>
 
 </body>
 </html>

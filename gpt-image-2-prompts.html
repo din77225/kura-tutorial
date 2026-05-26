@@ -597,19 +597,37 @@
       The prompts work copy-paste, but you'll get better results with a quick rhythm. After we walk through
       a few together, this is the loop you can run on your own:
     </p>
-    <ul class="check">
-      <li>Decide what kind of post you need this week and find the matching tier above.</li>
-      <li>Copy a prompt, swap in details that fit a Kura piece (metal, stone, finish, mood).</li>
-      <li>Run it. Start with one render, not five — see how close it lands first.</li>
-      <li>Refine in Canva Magic Layer: clean up the metal edges, swap a background, fix any awkward shadows.</li>
-      <li>Save the prompts that worked into a small library of your own — same prompt structure works across new pieces.</li>
-      <li>The example image on each card is your aesthetic target. If your output looks too far off, the prompt needs a stronger lighting word or composition word.</li>
+    <ul class="checklist" data-group="how-to-use">
+      <li><label><input type="checkbox" data-key="use-1" /><span>Decide what kind of post you need this week and find the matching tier above.</span></label></li>
+      <li><label><input type="checkbox" data-key="use-2" /><span>Copy a prompt, swap in details that fit a Kura piece (metal, stone, finish, mood).</span></label></li>
+      <li><label><input type="checkbox" data-key="use-3" /><span>Run it. Start with one render, not five — see how close it lands first.</span></label></li>
+      <li><label><input type="checkbox" data-key="use-4" /><span>Refine in Canva Magic Layer: clean up the metal edges, swap a background, fix any awkward shadows.</span></label></li>
+      <li><label><input type="checkbox" data-key="use-5" /><span>Save the prompts that worked into a small library of your own — same prompt structure works across new pieces.</span></label></li>
+      <li><label><input type="checkbox" data-key="use-6" /><span>The example image on each card is your aesthetic target. If your output looks too far off, the prompt needs a stronger lighting word or composition word.</span></label></li>
     </ul>
     <p style="color: var(--mm-muted); font-size: 14px; max-width: 700px;">
       Tip — keep <code>--ar 4:5</code> on the end for IG feed, swap to <code>--ar 9:16</code> for Reels covers and Stories.
     </p>
   </div>
 </section>
+
+<script>
+document.querySelectorAll('.checklist input[type="checkbox"]').forEach(function(cb) {
+  var key = 'kura-gpt2-' + cb.dataset.key;
+  if (localStorage.getItem(key) === 'true') {
+    cb.checked = true;
+    cb.closest('li').classList.add('done');
+  }
+  cb.addEventListener('change', function() {
+    localStorage.setItem(key, cb.checked);
+    if (cb.checked) {
+      cb.closest('li').classList.add('done');
+    } else {
+      cb.closest('li').classList.remove('done');
+    }
+  });
+});
+</script>
 
 </body>
 </html>
